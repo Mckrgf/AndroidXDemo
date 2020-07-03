@@ -9,15 +9,15 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 
 open class BaseFragment() : Fragment() {
-
+    private val name = this.javaClass.simpleName
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        Log.d("BaseFragment","LifeCycle: " + "onAttach")
+        Log.d("BaseFragment", "$name: LifeCycle: onAttach")
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d("BaseFragment","LifeCycle: " + "onCreate")
+        Log.d("BaseFragment", "$name: LifeCycle: onCreate")
     }
 
     override fun onCreateView(
@@ -25,47 +25,47 @@ open class BaseFragment() : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        Log.d("BaseFragment","LifeCycle: " + "onCreateView")
+        Log.d("BaseFragment", "$name: LifeCycle: onCreateView")
         return super.onCreateView(inflater, container, savedInstanceState)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        Log.d("BaseFragment","LifeCycle: " + "onActivityCreated")
+        Log.d("BaseFragment", "$name: LifeCycle: onActivityCreated")
     }
 
     override fun onStart() {
         super.onStart()
-        Log.d("BaseFragment","LifeCycle: " + "onStart")
+        Log.d("BaseFragment", "$name: LifeCycle: onStart")
     }
 
     override fun onResume() {
         super.onResume()
-        Log.d("BaseFragment","LifeCycle: " + "onResume")
+        Log.d("BaseFragment", "$name: LifeCycle: onResume")
     }
 
     override fun onPause() {
         super.onPause()
-        Log.d("BaseFragment","LifeCycle: " + "onPause")
+        Log.d("BaseFragment", "$name: LifeCycle: onPause")
     }
 
     override fun onStop() {
         super.onStop()
-        Log.d("BaseFragment","LifeCycle: " + "onStop")
+        Log.d("BaseFragment", "$name: LifeCycle: onStop")
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        Log.d("BaseFragment","LifeCycle: " + "onDestroyView")
+        Log.d("BaseFragment", "$name: LifeCycle: onDestroyView")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.d("BaseFragment","LifeCycle: " + "onDestroy")
+        Log.d("BaseFragment", "$name: LifeCycle: onDestroy")
     }
 
     override fun onDetach() {
         super.onDetach()
-        Log.d("BaseFragment","LifeCycle: " + "onDetach")
+        Log.d("BaseFragment", "$name: LifeCycle: onDetach")
     }
 }
