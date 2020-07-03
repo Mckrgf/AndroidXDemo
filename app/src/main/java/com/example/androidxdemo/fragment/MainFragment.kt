@@ -17,7 +17,7 @@ import com.example.androidxdemo.adapter.MainFragmentAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.fragment_blank.*
 
-class BlankFragment : Fragment() {
+class BlankFragment : BaseFragment() {
     private var fragments = ArrayList<Fragment>()
     private var tabStrings: Array<String>? = arrayOf("A", "B", "C")
     override fun onCreateView(

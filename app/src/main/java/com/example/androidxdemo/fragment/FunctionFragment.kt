@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.androidxdemo.R
 
-class FunctionFragment : Fragment(){
+class FunctionFragment : BaseFragment(){
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
