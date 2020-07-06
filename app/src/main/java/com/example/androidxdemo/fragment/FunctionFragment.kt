@@ -4,8 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+import com.example.androidxdemo.App
 import com.example.androidxdemo.R
+import com.example.androidxdemo.adapter.FunctionAdapter
+import kotlinx.android.synthetic.main.fragment_blank.*
+import kotlinx.android.synthetic.main.fragment_function.*
 
 class FunctionFragment : BaseFragment(){
     override fun onCreateView(
@@ -18,5 +21,9 @@ class FunctionFragment : BaseFragment(){
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
+        val functionAdapter = FunctionAdapter(App.funtions)
+        rv_function.adapter = functionAdapter
+        functionAdapter.setNewInstance(App.funtions)
     }
 }
