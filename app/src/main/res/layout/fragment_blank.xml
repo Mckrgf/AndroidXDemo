@@ -17,7 +17,6 @@
         android:id="@+id/tabs"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        app:tabIconTint="@drawable/tab_icon_color_selector"
         app:tabTextColor="?attr/colorPrimaryDark"
         app:tabSelectedTextColor="@color/red"/>
 

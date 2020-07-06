@@ -4,11 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentPagerAdapter
-import androidx.fragment.app.FragmentStatePagerAdapter
-import androidx.viewpager2.adapter.FragmentStateAdapter
+import androidx.viewpager2.widget.ViewPager2
 import com.example.androidxdemo.R
 import com.example.androidxdemo.adapter.EXAMPLE_B_INDEX
 import com.example.androidxdemo.adapter.EXAMPLE_C_INDEX
@@ -18,8 +14,6 @@ import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.fragment_blank.*
 
 class BlankFragment : BaseFragment() {
-    private var fragments = ArrayList<Fragment>()
-    private var tabStrings: Array<String>? = arrayOf("A", "B", "C")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -29,7 +23,6 @@ class BlankFragment : BaseFragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        // TODO: 2020/7/3 加三个tab和fragment，联动
         // TODO: 2020/7/3 tab1是功能列表，列表第一个按钮是内存泄漏测试用例，第二个是管navigation跳转相关。其余fragment再说
 
         //设置适配器，适配器负责fragment跳转，不需要在此页面维护viewpager中的fragment
@@ -44,9 +37,9 @@ class BlankFragment : BaseFragment() {
 
     private fun getTabIcon(position: Int): Int {
         return when (position) {
-            FUNCTION_PAGE_INDEX -> R.drawable.ic_launcher_background
-            EXAMPLE_B_INDEX -> R.drawable.ic_launcher_background
-            EXAMPLE_C_INDEX -> R.drawable.ic_launcher_background
+            FUNCTION_PAGE_INDEX -> R.drawable.functioin_list_tab_selector
+            EXAMPLE_B_INDEX -> R.drawable.functioin_list_tab_selector
+            EXAMPLE_C_INDEX -> R.drawable.functioin_list_tab_selector
             else -> throw IndexOutOfBoundsException()
         }
     }
