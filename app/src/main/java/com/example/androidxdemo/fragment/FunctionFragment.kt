@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.androidxdemo.App
 import com.example.androidxdemo.R
 import com.example.androidxdemo.adapter.FunctionAdapter
-import kotlinx.android.synthetic.main.fragment_blank.*
 import kotlinx.android.synthetic.main.fragment_function.*
 
 class FunctionFragment : BaseFragment(){
