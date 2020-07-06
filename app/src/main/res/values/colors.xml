@@ -43,7 +43,7 @@
 
     <color name="black_slight">#666666</color>
 
-    <color name="noread">#ff4b4b4b</color>
+    <color name="noreadnoread">#ff4b4b4b</color>
 
     <color name="green_btn">#33b422</color>
 
@@ -98,5 +98,6 @@
     <color name="gray_bg">#e5e5e5</color>
     <color name="text_gray_7">#757575</color>
     <color name="text_gray_back">#F1F2F4</color>
+    <color name="blue_tab">#0003FF</color>
 
 </resources>
