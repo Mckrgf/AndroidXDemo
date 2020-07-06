@@ -3,45 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_functions"
-    app:startDestination="@id/blankFragment">
-
+    app:startDestination="@id/functionFragment">
     <fragment
-        android:id="@+id/blankFragment2"
-        android:name="com.example.androidxdemo.fragment.MainFragment"
-        android:label="fragment_blank"
-        tools:layout="@layout/fragment_blank" >
+        android:id="@+id/functionFragment"
+        android:name="com.example.androidxdemo.fragment.FunctionFragment"
+        android:label="FunctionFragment" >
         <action
-            android:id="@+id/action_blankFragment2_to_blankFragment5"
-            app:destination="@id/blankFragment5" />
+            android:id="@+id/action_functionFragment_to_memoryLeakUseCaseFragment"
+            app:destination="@id/memoryLeakUseCaseFragment" />
     </fragment>
     <fragment
-        android:id="@+id/blankFragment5"
-        android:name="com.example.androidxdemo.fragment.MainFragment"
-        android:label="fragment_blank"
-        tools:layout="@layout/fragment_blank" />
-    <fragment
-        android:id="@+id/blankFragment3"
-        android:name="com.example.androidxdemo.fragment.MainFragment"
-        android:label="fragment_blank"
-        tools:layout="@layout/fragment_blank" />
-    <fragment
-        android:id="@+id/blankFragment4"
-        android:name="com.example.androidxdemo.fragment.MainFragment"
-        android:label="fragment_blank"
-        tools:layout="@layout/fragment_blank" />
-    <fragment
-        android:id="@+id/blankFragment"
-        android:name="com.example.androidxdemo.fragment.MainFragment"
-        android:label="fragment_blank"
-        tools:layout="@layout/fragment_blank" >
-        <action
-            android:id="@+id/action_blankFragment_to_blankFragment2"
-            app:destination="@id/blankFragment2" />
-        <action
-            android:id="@+id/action_blankFragment_to_blankFragment4"
-            app:destination="@id/blankFragment4" />
-        <action
-            android:id="@+id/action_blankFragment_to_blankFragment3"
-            app:destination="@id/blankFragment3" />
-    </fragment>
+        android:id="@+id/memoryLeakUseCaseFragment"
+        android:name="com.example.androidxdemo.fragment.MemoryLeakUseCaseFragment"
+        android:label="MemoryLeakUseCaseFragment" />
 </navigation>
