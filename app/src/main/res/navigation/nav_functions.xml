@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/blankFragment2"
-        android:name="com.example.androidxdemo.fragment.BlankFragment"
+        android:name="com.example.androidxdemo.fragment.MainFragment"
         android:label="fragment_blank"
         tools:layout="@layout/fragment_blank" >
         <action
@@ -16,22 +16,22 @@
     </fragment>
     <fragment
         android:id="@+id/blankFragment5"
-        android:name="com.example.androidxdemo.fragment.BlankFragment"
+        android:name="com.example.androidxdemo.fragment.MainFragment"
         android:label="fragment_blank"
         tools:layout="@layout/fragment_blank" />
     <fragment
         android:id="@+id/blankFragment3"
-        android:name="com.example.androidxdemo.fragment.BlankFragment"
+        android:name="com.example.androidxdemo.fragment.MainFragment"
         android:label="fragment_blank"
         tools:layout="@layout/fragment_blank" />
     <fragment
         android:id="@+id/blankFragment4"
-        android:name="com.example.androidxdemo.fragment.BlankFragment"
+        android:name="com.example.androidxdemo.fragment.MainFragment"
         android:label="fragment_blank"
         tools:layout="@layout/fragment_blank" />
     <fragment
         android:id="@+id/blankFragment"
-        android:name="com.example.androidxdemo.fragment.BlankFragment"
+        android:name="com.example.androidxdemo.fragment.MainFragment"
         android:label="fragment_blank"
         tools:layout="@layout/fragment_blank" >
         <action

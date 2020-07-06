@@ -13,7 +13,7 @@ import com.example.androidxdemo.adapter.MainFragmentAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.fragment_blank.*
 
-class BlankFragment : BaseFragment() {
+class MainFragment : BaseFragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
