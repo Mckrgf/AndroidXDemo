@@ -3,21 +3,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_functions"
-    app:startDestination="@id/functionFragment">
+    app:startDestination="@id/mainFragment">
     <fragment
         android:id="@+id/functionFragment"
         android:name="com.example.androidxdemo.fragment.FunctionFragment"
         android:label="FunctionFragment" >
+
+    </fragment>
+    <fragment
+        android:id="@+id/memoryLeakUseCaseFragment"
+        android:name="com.example.androidxdemo.fragment.MemoryLeakUseCaseFragment"
+        android:label="MemoryLeakUseCaseFragment" />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.androidxdemo.fragment.MainFragment"
+        android:label="MainFragment" >
+
         <action
-            android:id="@+id/action_functionFragment_to_memoryLeakUseCaseFragment"
+            android:id="@+id/action_mainFragment_to_memoryLeakUseCaseFragment"
             app:destination="@id/memoryLeakUseCaseFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
-    <fragment
-        android:id="@+id/memoryLeakUseCaseFragment"
-        android:name="com.example.androidxdemo.fragment.MemoryLeakUseCaseFragment"
-        android:label="MemoryLeakUseCaseFragment" />
 </navigation>

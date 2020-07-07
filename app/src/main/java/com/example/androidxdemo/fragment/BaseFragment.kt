@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 
 open class BaseFragment() : Fragment() {
     private val name = this.javaClass.simpleName
+    val TAG:String = name
     override fun onAttach(context: Context) {
         super.onAttach(context)
         Log.d(name, "$name: LifeCycle: onAttach")
