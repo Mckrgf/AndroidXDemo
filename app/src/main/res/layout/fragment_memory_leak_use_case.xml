@@ -7,19 +7,19 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:gravity="center"
-        android:text="用例A"
+        android:text="@string/LEAK_A"
         android:id="@+id/tv_use_case_a"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:gravity="center"
-        android:text="用例B"
+        android:text="@string/LEAK_B"
         android:id="@+id/tv_use_case_b"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:gravity="center"
-        android:text="用例C"
+        android:text="@string/LEAK_C"
         android:id="@+id/tv_use_case_c"/>
     <TextView
         android:layout_width="match_parent"
