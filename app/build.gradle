@@ -60,5 +60,5 @@ dependencies {
 
     //第三方控件相关--------------------------------------------------------------------------------
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
-
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.4'
 }

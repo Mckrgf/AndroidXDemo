@@ -5,4 +5,7 @@
     <string name="function">功能区</string>
     <string name="example_a">备用01</string>
     <string name="example_b">备用02</string>
+    <string name="LEAK_A">静态变量导致的内存泄漏</string>
+    <string name="LEAK_B">单例模式导致的内存泄漏</string>
+    <string name="LEAK_C">属性动画导致的内存泄漏</string>
 </resources>
