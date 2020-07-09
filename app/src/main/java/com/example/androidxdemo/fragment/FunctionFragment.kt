@@ -1,5 +1,6 @@
 package com.example.androidxdemo.fragment
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,11 +8,18 @@ import android.view.ViewGroup
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.androidxdemo.App
+import com.example.androidxdemo.MyObserver
 import com.example.androidxdemo.R
 import com.example.androidxdemo.adapter.FunctionAdapter
+import com.example.androidxdemo.bean.Function
 import kotlinx.android.synthetic.main.fragment_function.*
 
 class FunctionFragment : BaseFragment(){
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        val aa = Function("aaa",1)
+        lifecycle.addObserver(aa)
+    }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
