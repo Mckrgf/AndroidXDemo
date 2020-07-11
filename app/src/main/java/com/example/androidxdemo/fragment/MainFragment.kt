@@ -23,7 +23,7 @@ class MainFragment : BaseFragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        // TODO: 2020/7/3 tab1是功能列表，列表第一个按钮是内存泄漏测试用例，第二个是管navigation跳转相关。其余fragment再说
+        //2020/7/3 tab1是功能列表，列表第一个按钮是内存泄漏测试用例，第二个是管navigation跳转相关。其余fragment再说
 
         //设置适配器，适配器负责fragment跳转，不需要在此页面维护viewpager中的fragment
         view_pager.adapter = MainFragmentAdapter(this)

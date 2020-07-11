@@ -23,11 +23,11 @@ class FunctionFragment : BaseFragment(){
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         rv_function.layoutManager = LinearLayoutManager(activity,LinearLayoutManager.VERTICAL,false)
-        val functionAdapter = FunctionAdapter(App.funtions)
+        val functionAdapter = FunctionAdapter()
         rv_function.adapter = functionAdapter
-        functionAdapter.setNewInstance(App.funtions)
+        functionAdapter.setList(App.funtions)
         functionAdapter.setOnItemClickListener { adapter, view, position ->
-            when (App.funtions[position].id) {
+            when (App.funtions[position].id.value) {
                 0 -> {
                     //跳转fragment
                     Navigation.findNavController(view).navigate(R.id.action_mainFragment_to_memoryLeakUseCaseFragment, Bundle().apply {
