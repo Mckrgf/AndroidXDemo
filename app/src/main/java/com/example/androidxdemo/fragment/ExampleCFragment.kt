@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.androidxdemo.R
+import com.example.androidxdemo.databinding.FragmentExampleCBinding
 
 class ExampleCFragment : BaseFragment(){
     override fun onCreateView(
@@ -13,7 +14,8 @@ class ExampleCFragment : BaseFragment(){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_example_c, container, false)
+        val binding = FragmentExampleCBinding.inflate(inflater,container,false)
+        return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

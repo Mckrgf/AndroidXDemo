@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.example.androidxdemo.R
+import com.example.androidxdemo.databinding.FragmentBlankBinding
+import com.example.androidxdemo.databinding.FragmentExampleBBinding
 import kotlinx.android.synthetic.main.fragment_example_b.*
 
 class ExampleBFragment : BaseFragment() {
@@ -15,8 +17,9 @@ class ExampleBFragment : BaseFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        val binding = FragmentExampleBBinding.inflate(inflater,container,false)
 
-        return inflater.inflate(R.layout.fragment_example_b, container, false)
+        return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
