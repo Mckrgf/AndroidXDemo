@@ -24,12 +24,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@{functionViewModel.name}" />
-        <Button
-            android:id="@+id/tv_function1"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="修改" />
 
     </LinearLayout>
 

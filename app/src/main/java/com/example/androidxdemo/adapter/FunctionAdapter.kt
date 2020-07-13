@@ -1,6 +1,4 @@
 package com.example.androidxdemo.adapter
-
-import androidx.lifecycle.MutableLiveData
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseDataBindingHolder
 import com.example.androidxdemo.R
@@ -13,10 +11,6 @@ class FunctionAdapter :
     override fun convert(holder: BaseDataBindingHolder<ItemFunctionViewBinding>, item: FunctionViewModel) {
         holder.dataBinding?.functionViewModel = item
         holder.dataBinding?.executePendingBindings()
-        holder.dataBinding?.tvFunction1?.setOnClickListener {
-            item.name = MutableLiveData("哈哈" + holder.position)
-            notifyItemChanged(holder.adapterPosition)
-        }
     }
 
 

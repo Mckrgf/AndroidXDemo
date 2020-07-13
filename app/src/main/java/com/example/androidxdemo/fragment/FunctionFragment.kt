@@ -41,10 +41,7 @@ class FunctionFragment : BaseFragment(){
     }
 
     private fun initView() {
-        bt_add_function.setOnClickListener {
-            App.funtions.add(FunctionViewModel("内存泄漏",0))
-            functionAdapter.setList(App.funtions)
-        }
+
     }
 
     private fun initFunctionsData() {
