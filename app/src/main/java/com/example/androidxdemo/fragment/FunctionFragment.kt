@@ -8,11 +8,13 @@ import android.view.ViewGroup
 import androidx.lifecycle.MutableLiveData
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.androidxdemo.App
 import com.example.androidxdemo.MyObserver
 import com.example.androidxdemo.R
 import com.example.androidxdemo.adapter.FunctionAdapter
 import com.example.androidxdemo.bean.Function
+import com.example.androidxdemo.databinding.FragmentFunctionBinding
 import com.example.androidxdemo.viewModel.FunctionListViewModel
 import com.example.androidxdemo.viewModel.FunctionViewModel
 import kotlinx.android.synthetic.main.fragment_function.*
@@ -31,20 +33,12 @@ class FunctionFragment : BaseFragment(){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_function, container, false)
+        val binding = FragmentFunctionBinding.inflate(inflater,container,false)
+        initFunctionsData(binding.rvFunction)
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        initView()
-        initFunctionsData()
-    }
-
-    private fun initView() {
-
-    }
-
-    private fun initFunctionsData() {
+    private fun initFunctionsData(rv_function : RecyclerView) {
         rv_function.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
         rv_function.adapter = functionAdapter
         functionAdapter.setList(FunctionListViewModel().functionList.value)

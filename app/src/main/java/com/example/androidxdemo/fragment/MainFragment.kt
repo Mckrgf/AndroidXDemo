@@ -10,6 +10,7 @@ import com.example.androidxdemo.adapter.EXAMPLE_B_INDEX
 import com.example.androidxdemo.adapter.EXAMPLE_C_INDEX
 import com.example.androidxdemo.adapter.FUNCTION_PAGE_INDEX
 import com.example.androidxdemo.adapter.MainFragmentAdapter
+import com.example.androidxdemo.databinding.FragmentBlankBinding
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.fragment_blank.*
 
@@ -18,21 +19,20 @@ class MainFragment : BaseFragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_blank, container, false)
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        //2020/7/3 tab1是功能列表，列表第一个按钮是内存泄漏测试用例，第二个是管navigation跳转相关。其余fragment再说
+        val binding = FragmentBlankBinding.inflate(inflater,container,false)
+        val viewPager = binding.viewPager
+        val tabs = binding.tabs
 
         //设置适配器，适配器负责fragment跳转，不需要在此页面维护viewpager中的fragment
-        view_pager.adapter = MainFragmentAdapter(this)
+        viewPager.adapter = MainFragmentAdapter(this)
 
         //设置tab，包括文字和图标
-        TabLayoutMediator(tabs, view_pager) { tab, position ->
+        TabLayoutMediator(tabs, viewPager) { tab, position ->
             tab.setIcon(getTabIcon(position))
             tab.text = getTabTitle(position)
         }.attach()
+
+        return binding.root
     }
 
     private fun getTabIcon(position: Int): Int {

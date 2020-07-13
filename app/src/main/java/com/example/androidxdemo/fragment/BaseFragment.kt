@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import androidx.fragment.app.Fragment
 
 open class BaseFragment() : Fragment() {
@@ -57,6 +58,7 @@ open class BaseFragment() : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+//        unbindDrawables(requireView())
         Log.d(name, "$name: LifeCycle: onDestroyView")
     }
 
@@ -68,5 +70,17 @@ open class BaseFragment() : Fragment() {
     override fun onDetach() {
         super.onDetach()
         Log.d(name, "$name: LifeCycle: onDetach")
+    }
+
+    open fun unbindDrawables(view: View) {
+        if (view.background != null) {
+            view.background.callback = null
+        }
+        if (view is ViewGroup && view !is AdapterView<*>) {
+            for (i in 0 until view.childCount) {
+                unbindDrawables(view.getChildAt(i))
+            }
+            view.removeAllViews()
+        }
     }
 }

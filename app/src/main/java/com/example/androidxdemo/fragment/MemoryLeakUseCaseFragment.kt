@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.androidxdemo.R
 import com.example.androidxdemo.SingletonTestManager
+import com.example.androidxdemo.databinding.FragmentMemoryLeakUseCaseBinding
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_memory_leak_use_case.*
 
@@ -16,22 +17,18 @@ class MemoryLeakUseCaseFragment : BaseFragment(), SingletonTestManager.OnDataArr
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_memory_leak_use_case, container, false)
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        getArgs()
-
-        tv_use_case_a.setOnClickListener {
+        val binding = FragmentMemoryLeakUseCaseBinding.inflate(inflater,container,false)
+        binding.tvUseCaseA.setOnClickListener {
             staticView = View(activity)
             Snackbar.make(requireView(), "静态常量引用上下文，已经造成泄露", Snackbar.LENGTH_LONG).show()
         }
 
-        tv_use_case_b.setOnClickListener {
+        binding.tvUseCaseB.setOnClickListener {
             SingletonTestManager.getInstance().registerListener(this)
             Snackbar.make(requireView(), "单例模式引用上下文，已经造成泄露", Snackbar.LENGTH_LONG).show()
         }
+        getArgs()
+        return binding.root
     }
 
     /**
