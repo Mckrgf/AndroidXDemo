@@ -21,6 +21,8 @@
 
 <!--</layout>-->
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/aaa"
+
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <FrameLayout
