@@ -1,7 +1,7 @@
 package com.example.androidxdemo
 
 import android.app.Application
-import com.example.androidxdemo.bean.Function
+import com.example.androidxdemo.viewModel.FunctionViewModel
 
 class App : Application() {
 
@@ -14,8 +14,7 @@ class App : Application() {
 
     }
     private fun initFunctions() {
-        funtions.add(Function("内存泄漏",0))
-        funtions.add(Function("databinding/livedata/viewmodel",1))
+        funtions.add(FunctionViewModel("内存泄漏",0))
     }
 
 
@@ -23,7 +22,7 @@ class App : Application() {
     companion object {
         private var app: App? = null
 
-        var funtions = mutableListOf<Function>()
+        var funtions = mutableListOf<FunctionViewModel>()
 
 
         fun getMe(): App? {
