@@ -13,7 +13,6 @@ import com.example.androidxdemo.App
 import com.example.androidxdemo.MyObserver
 import com.example.androidxdemo.R
 import com.example.androidxdemo.adapter.FunctionAdapter
-import com.example.androidxdemo.bean.Function
 import com.example.androidxdemo.databinding.FragmentFunctionBinding
 import com.example.androidxdemo.viewModel.FunctionListViewModel
 import com.example.androidxdemo.viewModel.FunctionViewModel
@@ -23,11 +22,6 @@ class FunctionFragment : BaseFragment(){
 
     private val functionAdapter = FunctionAdapter()
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        val aa = Function("aaa",1)
-        lifecycle.addObserver(aa)
-    }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
