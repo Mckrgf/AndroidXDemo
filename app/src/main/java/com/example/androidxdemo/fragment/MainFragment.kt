@@ -10,29 +10,35 @@ import com.example.androidxdemo.adapter.EXAMPLE_B_INDEX
 import com.example.androidxdemo.adapter.EXAMPLE_C_INDEX
 import com.example.androidxdemo.adapter.FUNCTION_PAGE_INDEX
 import com.example.androidxdemo.adapter.MainFragmentAdapter
-import com.example.androidxdemo.databinding.FragmentBlankBinding
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.fragment_blank.*
 
 class MainFragment : BaseFragment() {
+    private var rootView: View? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = FragmentBlankBinding.inflate(inflater,container,false)
-        val viewPager = binding.viewPager
-        val tabs = binding.tabs
+        rootView = inflater.inflate(R.layout.fragment_blank, container, false)
+        return rootView
+    }
 
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
         //设置适配器，适配器负责fragment跳转，不需要在此页面维护viewpager中的fragment
-        viewPager.adapter = MainFragmentAdapter(this)
+        view_pager.adapter = MainFragmentAdapter(this)
 
         //设置tab，包括文字和图标
-        TabLayoutMediator(tabs, viewPager) { tab, position ->
+        TabLayoutMediator(tabs, view_pager) { tab, position ->
             tab.setIcon(getTabIcon(position))
             tab.text = getTabTitle(position)
         }.attach()
+    }
 
-        return binding.root
+    override fun onDestroyView() {
+        super.onDestroyView()
+        view_pager.adapter = null
+        rootView = null
     }
 
     private fun getTabIcon(position: Int): Int {

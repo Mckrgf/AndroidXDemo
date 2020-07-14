@@ -1,6 +1,5 @@
 package com.example.androidxdemo.fragment
 
-import android.app.Activity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -16,28 +15,28 @@ import com.example.androidxdemo.viewModel.FunctionListViewModel
 
 class FunctionFragment : BaseFragment(){
 
-    private val functionAdapter = FunctionAdapter()
-    lateinit var binding: FragmentFunctionBinding
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentFunctionBinding.inflate(inflater,container,false)
+        val binding = FragmentFunctionBinding.inflate(inflater,container,false)
         initFunctionsData(binding.rvFunction)
         return binding.root
     }
 
     private fun initFunctionsData(rv_function : RecyclerView) {
+        val functionAdapter = FunctionAdapter()
         rv_function.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
         rv_function.adapter = functionAdapter
         functionAdapter.setList(FunctionListViewModel().functionList.value)
-        functionAdapter.setOnItemClickListener { adapter, view, position ->
+        functionAdapter.setOnItemClickListener { _, view, position ->
             when (App.funtions[position].id.value) {
                 0 -> {
                     //跳转fragment
                     Navigation.findNavController(view).navigate(
-                        R.id.action_functionFragment_to_memoryLeakUseCaseFragment2,
+//                        R.id.action_functionFragment_to_memoryLeakUseCaseFragment2,
+                        R.id.action_mainFragment_to_memoryLeakUseCaseFragment,
                         Bundle().apply {
                             putString("name", "jenny")
                             putInt("age", 18)
@@ -54,10 +53,5 @@ class FunctionFragment : BaseFragment(){
                 }
             }
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        binding.unbind()
     }
 }
