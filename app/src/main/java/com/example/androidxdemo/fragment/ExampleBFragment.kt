@@ -26,7 +26,7 @@ class ExampleBFragment : BaseFragment() {
         super.onActivityCreated(savedInstanceState)
         bt_change.setOnClickListener {
             Navigation.findNavController(it).navigate(
-                R.id.action_exampleBFragment_to_exampleCFragment
+                R.id.action_exampleBFragment_to_exampleCFragment2
             )
         }
     }
