@@ -7,7 +7,11 @@
     <fragment
         android:id="@+id/memoryLeakUseCaseFragment"
         android:name="com.example.androidxdemo.fragment.MemoryLeakUseCaseFragment"
-        android:label="MemoryLeakUseCaseFragment" />
+        android:label="MemoryLeakUseCaseFragment" >
+        <action
+            android:id="@+id/action_memoryLeakUseCaseFragment_to_exampleBFragment2"
+            app:destination="@id/exampleBFragment2" />
+    </fragment>
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.example.androidxdemo.fragment.MainFragment"
@@ -21,4 +25,16 @@
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
+    <fragment
+        android:id="@+id/exampleBFragment2"
+        android:name="com.example.androidxdemo.fragment.ExampleBFragment"
+        android:label="ExampleBFragment" >
+        <action
+            android:id="@+id/action_exampleBFragment2_to_exampleCFragment"
+            app:destination="@id/exampleCFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/exampleCFragment"
+        android:name="com.example.androidxdemo.fragment.ExampleCFragment"
+        android:label="ExampleCFragment" />
 </navigation>

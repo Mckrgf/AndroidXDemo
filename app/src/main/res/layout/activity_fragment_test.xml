@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FragmentTestActivity">
+    tools:context=".FunctionListActivity">
 
 
     <androidx.fragment.app.FragmentContainerView
@@ -17,5 +17,5 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:defaultNavHost="true"
-        app:navGraph="@navigation/nav_fragment_test1" />
+        app:navGraph="@navigation/nav_graf" />
 </androidx.constraintlayout.widget.ConstraintLayout>

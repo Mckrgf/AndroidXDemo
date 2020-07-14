@@ -37,7 +37,7 @@ class FunctionFragment : BaseFragment(){
                 0 -> {
                     //跳转fragment
                     Navigation.findNavController(view).navigate(
-                        R.id.action_mainFragment_to_memoryLeakUseCaseFragment,
+                        R.id.action_functionFragment_to_memoryLeakUseCaseFragment2,
                         Bundle().apply {
                             putString("name", "jenny")
                             putInt("age", 18)

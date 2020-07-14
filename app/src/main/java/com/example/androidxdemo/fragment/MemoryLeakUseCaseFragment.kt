@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import com.example.androidxdemo.R
 import com.example.androidxdemo.SingletonTestManager
 import com.example.androidxdemo.databinding.FragmentMemoryLeakUseCaseBinding
@@ -26,6 +27,9 @@ class MemoryLeakUseCaseFragment : BaseFragment(), SingletonTestManager.OnDataArr
         binding.tvUseCaseB.setOnClickListener {
             SingletonTestManager.getInstance().registerListener(this)
             Snackbar.make(requireView(), "单例模式引用上下文，已经造成泄露", Snackbar.LENGTH_LONG).show()
+        }
+        binding.tvUseCaseC.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.action_memoryLeakUseCaseFragment_to_exampleBFragment2)
         }
         getArgs()
         return binding.root
