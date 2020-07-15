@@ -38,6 +38,7 @@ class MainFragment : BaseFragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         view_pager.adapter = null
+        tabs.removeAllTabs()
         rootView = null
     }
 

@@ -15,7 +15,6 @@ class App : Application() {
     }
     private fun initFunctions() {
         funtions.add(FunctionViewModel("内存泄漏",0))
-        funtions.add(FunctionViewModel("databinding/livedata/viewmodel Test",1))
     }
 
 
