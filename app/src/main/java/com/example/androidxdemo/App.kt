@@ -15,6 +15,7 @@ class App : Application() {
     }
     private fun initFunctions() {
         funtions.add(FunctionViewModel("内存泄漏",0))
+        funtions.add(FunctionViewModel("navigation管理fragment堆栈，附带全局操作",1))
     }
 
 

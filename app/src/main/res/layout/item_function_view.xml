@@ -19,6 +19,7 @@
         android:orientation="horizontal">
 
         <TextView
+            android:gravity="center"
             android:id="@+id/tv_function"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

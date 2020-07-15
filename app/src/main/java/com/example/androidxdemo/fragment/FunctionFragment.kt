@@ -13,6 +13,7 @@ import com.example.androidxdemo.adapter.FunctionAdapter
 import com.example.androidxdemo.databinding.FragmentFunctionBinding
 import com.example.androidxdemo.viewModel.FunctionListViewModel
 import com.example.androidxdemo.viewModel.FunctionViewModel
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
 
 class FunctionFragment : BaseFragment() {
@@ -44,6 +45,10 @@ class FunctionFragment : BaseFragment() {
                             FunctionViewModel("测试功能", 2)
                         )
                     )
+                }
+                1 -> {
+                    //跳转fragment
+                    Snackbar.make(requireView(), "暂未开放", Snackbar.LENGTH_LONG).show()
                 }
             }
         }
