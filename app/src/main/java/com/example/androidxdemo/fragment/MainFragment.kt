@@ -10,36 +10,40 @@ import com.example.androidxdemo.adapter.EXAMPLE_B_INDEX
 import com.example.androidxdemo.adapter.EXAMPLE_C_INDEX
 import com.example.androidxdemo.adapter.FUNCTION_PAGE_INDEX
 import com.example.androidxdemo.adapter.MainFragmentAdapter
+import com.example.androidxdemo.databinding.FragmentBlankBinding
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.fragment_blank.*
 
 class MainFragment : BaseFragment() {
-    private var rootView: View? = null
+    var binding: FragmentBlankBinding? = null
+    var mediator:TabLayoutMediator? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        rootView = inflater.inflate(R.layout.fragment_blank, container, false)
-        return rootView
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+        binding = FragmentBlankBinding.inflate(inflater, container, false)
         //设置适配器，适配器负责fragment跳转，不需要在此页面维护viewpager中的fragment
-        view_pager.adapter = MainFragmentAdapter(this)
+        binding?.viewPager?.adapter = MainFragmentAdapter(this)
 
         //设置tab，包括文字和图标
-        TabLayoutMediator(tabs, view_pager) { tab, position ->
+        mediator = TabLayoutMediator(binding!!.tabs, binding!!.viewPager) { tab, position ->
             tab.setIcon(getTabIcon(position))
             tab.text = getTabTitle(position)
-        }.attach()
+        }
+        mediator?.attach()
+        return binding!!.root
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        view_pager.adapter = null
-        tabs.removeAllTabs()
-        rootView = null
+        binding?.viewPager?.adapter = null //防止viewpageradapter在持有this引用的前提下onDestroyView（）导致内存泄漏
+
+        //以下三行并不能阻止tabs的内存泄漏
+//        binding?.tabs?.removeAllTabs()
+//        binding?.tabs?.removeAllViews()
+//        mediator?.detach()
+
+        binding = null
     }
 
     private fun getTabIcon(position: Int): Int {

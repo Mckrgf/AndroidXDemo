@@ -12,14 +12,15 @@ import com.example.androidxdemo.databinding.FragmentExampleBBinding
 import kotlinx.android.synthetic.main.fragment_example_b.*
 
 class ExampleBFragment : BaseFragment() {
+    var binding: FragmentExampleBBinding? = null
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = FragmentExampleBBinding.inflate(inflater,container,false)
-
-        return binding.root
+        binding = FragmentExampleBBinding.inflate(inflater,container,false)
+        return binding?.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -29,5 +30,10 @@ class ExampleBFragment : BaseFragment() {
                 R.id.action_exampleBFragment_to_exampleCFragment2
             )
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding = null
     }
 }
