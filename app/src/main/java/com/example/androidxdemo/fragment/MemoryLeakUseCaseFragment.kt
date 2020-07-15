@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.navArgs
 import com.example.androidxdemo.R
 import com.example.androidxdemo.SingletonTestManager
 import com.example.androidxdemo.databinding.FragmentMemoryLeakUseCaseBinding
@@ -13,6 +14,8 @@ import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_memory_leak_use_case.*
 
 class MemoryLeakUseCaseFragment : BaseFragment(), SingletonTestManager.OnDataArrivedListener {
+    private val args: MemoryLeakUseCaseFragmentArgs by navArgs()
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -39,10 +42,7 @@ class MemoryLeakUseCaseFragment : BaseFragment(), SingletonTestManager.OnDataArr
      * fragment之间传递参数
      */
     private fun getArgs() {
-        val aaa = arguments?.get("name")
-
-        val bbb = arguments?.get("age")
-        Log.d(TAG, "aaa : $aaa + bbb : $bbb")
+        Log.d(TAG, "aaa : ${args.testString} + bbb : ${args.testInt} + ccc ：${args.testFunction}")
     }
 
     companion object{

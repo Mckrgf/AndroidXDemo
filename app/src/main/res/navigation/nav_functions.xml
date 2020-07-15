@@ -7,15 +7,24 @@
     <fragment
         android:id="@+id/memoryLeakUseCaseFragment"
         android:name="com.example.androidxdemo.fragment.MemoryLeakUseCaseFragment"
-        android:label="MemoryLeakUseCaseFragment" >
+        android:label="MemoryLeakUseCaseFragment">
         <action
             android:id="@+id/action_memoryLeakUseCaseFragment_to_exampleBFragment2"
             app:destination="@id/exampleBFragment2" />
+        <argument
+            android:name="test_string"
+            app:argType="string" />
+        <argument
+            android:name="test_int"
+            app:argType="integer" />
+        <argument
+            android:name="test_function"
+            app:argType="com.example.androidxdemo.viewModel.FunctionViewModel" />
     </fragment>
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.example.androidxdemo.fragment.MainFragment"
-        android:label="MainFragment" >
+        android:label="MainFragment">
 
         <action
             android:id="@+id/action_mainFragment_to_memoryLeakUseCaseFragment"
@@ -23,12 +32,34 @@
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"/>
+            app:popExitAnim="@anim/slide_out_right">
+
+            <!--            <argument-->
+            <!--                android:name="test_string"-->
+            <!--                app:argType="string"-->
+            <!--                android:defaultValue="haha" />-->
+            <!--            <argument-->
+            <!--                android:name="test_ints"-->
+            <!--                app:argType="integer[]" />-->
+            <!--            <argument-->
+            <!--                android:name="test_map"-->
+            <!--                app:argType="java.util.HashMap" />-->
+            <!--            <argument-->
+            <!--                android:name="test_function"-->
+            <!--                app:argType="com.example.androidxdemo.viewModel.FunctionViewModel" />-->
+            <argument
+                android:name="test_string" />
+        </action>
+        <argument
+            android:name="test_int"
+            android:defaultValue="-1"
+            app:argType="integer" />
+
     </fragment>
     <fragment
         android:id="@+id/exampleBFragment2"
         android:name="com.example.androidxdemo.fragment.ExampleBFragment"
-        android:label="ExampleBFragment" >
+        android:label="ExampleBFragment">
         <action
             android:id="@+id/action_exampleBFragment2_to_exampleCFragment"
             app:destination="@id/exampleCFragment" />
