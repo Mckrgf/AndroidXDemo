@@ -34,26 +34,19 @@
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right">
 
-            <!--            <argument-->
-            <!--                android:name="test_string"-->
-            <!--                app:argType="string"-->
-            <!--                android:defaultValue="haha" />-->
-            <!--            <argument-->
-            <!--                android:name="test_ints"-->
-            <!--                app:argType="integer[]" />-->
-            <!--            <argument-->
-            <!--                android:name="test_map"-->
-            <!--                app:argType="java.util.HashMap" />-->
-            <!--            <argument-->
-            <!--                android:name="test_function"-->
-            <!--                app:argType="com.example.androidxdemo.viewModel.FunctionViewModel" />-->
-            <argument
-                android:name="test_string" />
+            <argument android:name="test_string" />
         </action>
         <argument
             android:name="test_int"
             android:defaultValue="-1"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_mainFragment_to_exampleCFragment"
+            app:destination="@id/exampleCFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
 
     </fragment>
     <fragment
@@ -66,6 +59,32 @@
     </fragment>
     <fragment
         android:id="@+id/exampleCFragment"
-        android:name="com.example.androidxdemo.fragment.ExampleCFragment"
-        android:label="ExampleCFragment" />
+        android:name="com.example.androidxdemo.fragment.GlobleFragment"
+        android:label="ExampleCFragment">
+        <action
+            android:id="@+id/action_exampleCFragment_to_globleStartAFragment"
+            app:destination="@id/globleStartAFragment" />
+        <action
+            android:id="@+id/action_exampleCFragment_to_globleStartBFragment"
+            app:destination="@id/globleStartBFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/globleStartAFragment"
+        android:name="com.example.androidxdemo.fragment.GlobleStartAFragment"
+        android:label="GlobleStartAFragment" >
+        <argument
+            android:name="globle_a_string"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/globleStartBFragment"
+        android:name="com.example.androidxdemo.fragment.GlobleStartBFragment"
+        android:label="GlobleStartBFragment" />
+    <fragment
+        android:id="@+id/globleEndFragment"
+        android:name="com.example.androidxdemo.fragment.GlobleEndFragment"
+        android:label="GlobleEndFragment" />
+    <action
+        android:id="@+id/action_global_globleEndFragment"
+        app:destination="@id/globleEndFragment" />
 </navigation>

@@ -9,14 +9,8 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="跳转到全局操作之前的fragment——A"
-            android:id="@+id/bt_jump_a"/>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="跳转到全局操作之前的fragment——B"
-            android:id="@+id/bt_jump_b"/>
+            android:text="跳转到全局操作的end_fragment"
+            android:id="@+id/bt_jump_end"/>
 
     </LinearLayout>
 </layout>

@@ -15,7 +15,7 @@
     </fragment>
     <fragment
         android:id="@+id/exampleCFragment2"
-        android:name="com.example.androidxdemo.fragment.ExampleCFragment"
+        android:name="com.example.androidxdemo.fragment.GlobleFragment"
         android:label="ExampleCFragment"
         tools:layout="@layout/fragment_example_c"/>
     <fragment

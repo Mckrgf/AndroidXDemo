@@ -37,7 +37,6 @@ class FunctionFragment : BaseFragment() {
         functionAdapter.setOnItemClickListener { _, view, position ->
             when (App.funtions[position].id.value) {
                 0 -> {
-                    //跳转fragment
                     Navigation.findNavController(view).navigate(
                         MainFragmentDirections.actionMainFragmentToMemoryLeakUseCaseFragment(
                             "测试",
@@ -47,8 +46,7 @@ class FunctionFragment : BaseFragment() {
                     )
                 }
                 1 -> {
-                    //跳转fragment
-                    Snackbar.make(requireView(), "暂未开放", Snackbar.LENGTH_LONG).show()
+                    Navigation.findNavController(view).navigate(R.id.action_mainFragment_to_exampleCFragment)
                 }
             }
         }
