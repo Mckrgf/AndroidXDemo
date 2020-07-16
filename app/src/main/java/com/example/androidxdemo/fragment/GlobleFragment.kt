@@ -21,7 +21,7 @@ class GlobleFragment : BaseFragment(){
         binding?.btJumpA?.setOnClickListener {
             Navigation.findNavController(it).navigate(R.id.action_exampleCFragment_to_globleStartAFragment)
         }
-        binding?.btJumpA?.setOnClickListener {
+        binding?.btJumpB?.setOnClickListener {
             Navigation.findNavController(it).navigate(R.id.action_exampleCFragment_to_globleStartBFragment)
 
         }

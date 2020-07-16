@@ -42,7 +42,7 @@
             app:argType="integer" />
         <action
             android:id="@+id/action_mainFragment_to_exampleCFragment"
-            app:destination="@id/exampleCFragment"
+            app:destination="@id/GlobleFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
@@ -55,12 +55,12 @@
         android:label="ExampleBFragment">
         <action
             android:id="@+id/action_exampleBFragment2_to_exampleCFragment"
-            app:destination="@id/exampleCFragment" />
+            app:destination="@id/GlobleFragment" />
     </fragment>
     <fragment
-        android:id="@+id/exampleCFragment"
+        android:id="@+id/GlobleFragment"
         android:name="com.example.androidxdemo.fragment.GlobleFragment"
-        android:label="ExampleCFragment">
+        android:label="GlobleFragment">
         <action
             android:id="@+id/action_exampleCFragment_to_globleStartAFragment"
             app:destination="@id/globleStartAFragment" />
@@ -86,5 +86,6 @@
         android:label="GlobleEndFragment" />
     <action
         android:id="@+id/action_global_globleEndFragment"
-        app:destination="@id/globleEndFragment" />
+        app:destination="@id/globleEndFragment"
+        app:popUpTo="@id/GlobleFragment"/>
 </navigation>
